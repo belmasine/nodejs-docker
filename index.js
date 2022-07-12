@@ -25,9 +25,14 @@ const postRouter = require("./routes/posts")
 const userRouter = require("./routes/users")
 
 const app = express();
-
+const params = {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  };
 connectWithRetry = () => {
-    mongoose.connect(`mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`)
+    mongoose.connect(`mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`, params)
     .then(() => console.log('connect to DB ...'))
     .catch((err) => {
         console.log(err);
@@ -59,7 +64,7 @@ app.use(
 
 
 app.get("/api", (req, res) => {
-    res.send("<h2> hi there </h2>");
+    res.send("<h2> hi there  !! </h2>");
     console.log('it cool')
 })
 app.use("/api/posts", postRouter)
