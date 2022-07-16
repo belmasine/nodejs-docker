@@ -6,7 +6,7 @@ const protect = (req, res, next) => {
 
     if(!user) {
         return res.status(404).json({
-            status: 'fail',
+            status: 'fail session 4',
             message: 'unauthorized'
         })
     }
