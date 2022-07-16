@@ -21,7 +21,7 @@ const signup = async(req, res, next) => {
         
     } catch (error) {
         res.status(400).json({
-            status: "fail"
+            status: "fail 1"
         })
     }
 }
@@ -55,7 +55,7 @@ const login = async(req, res, next) => {
     } catch (error) {
         console.log(error.message)
         res.status(400).json({
-            status: "fail"
+            status: "fail 2"
         })
     }
 
@@ -75,7 +75,7 @@ const list = async(req, res, next) => {
         
     } catch (error) {
         res.status(400).json({
-            status: 'Fail request'
+            status: 'Fail request 1'
         })
     }
    
